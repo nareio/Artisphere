@@ -22,6 +22,7 @@ border-radius: 30px;
 padding: 1%;
 width: 20%;
 font-family : 'Verdana';
+ cursor: pointer;
 }
 
 .bouton-produit:hover {
@@ -40,6 +41,7 @@ border-radius: 30px;
 padding: 1%;
 width: 20%;
 font-family : 'Verdana';
+ cursor: pointer;
 }
 
 .bouton-evenement:hover {
@@ -101,7 +103,7 @@ font-weight: bold;
     cursor: pointer;
 }
 
-#page-fiche-evenement .bouton-enregistrer{
+#page-fiche-evenement .bouton-enregistrerV2{
 position: absolute;
 background-color: #887bb0 ;
 color : white;
@@ -114,7 +116,7 @@ line-height: 0px;
 font-family : 'Verdana';
 font-weight: bold;
    position: absolute;
-    top: 41.5rem ;              
+    top: 36.5rem ;              
     left: 53.5rem; 
     cursor: pointer;
 }
@@ -286,12 +288,12 @@ top: 8rem ;
 left: 48rem;
 }
 
-#page-fiche-evenement .para_produit{
+#page-fiche-evenement .para_evenement{
 font-family : 'Verdana';
 color : rgba(136, 123, 176, 0.7);
 position: absolute;
 top: 8rem ;              
-left: 48rem;
+left: 47rem;
 }
 
 #page-fiche-produit .catégorie{
@@ -371,7 +373,7 @@ left: 37rem;
 #page-fiche-produit .imagerond {
     width: 80px;
     height: 80px;
-    background-color: #e249c0;
+    background-color: #27DAF5;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -389,7 +391,7 @@ left: 37rem;
 #page-fiche-evenement .imagerond {
     width: 80px;
     height: 80px;
-    background-color: #e249c0;
+    background-color: #27DAF5;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -398,8 +400,115 @@ left: 37rem;
     color: white;
     font-size: 20px;
     user-select: none;
-       position: absolute;
+    position: absolute;
     top: 9.0rem ;              
     left: 38.5rem; 
 }
 
+
+
+#page-recherche-profil-admin .bouton-recherche {
+    border: none;
+    background-color: transparent; 
+    padding: 0; 
+    margin: 0;  
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 6rem ;              
+    left: 43.9rem;
+}
+
+#page-recherche-profil-admin .icone-loupe {
+    width: 100px; 
+    height: 30px;
+    display: block;
+    position: absolute;
+    bottom : 8.2rem ;              
+    right : 19.3rem;
+}
+
+#page-recherche-profil-admin .pave_rose {
+    background-color: #f4b9b8;
+    width: 40rem; 
+    height: 15rem;
+    position: absolute;
+    top: 10.9rem ;              
+    left: 29rem;
+}
+
+#page-recherche-profil-admin .barre-recherche {
+    background: transparent;
+    border: none;
+    color: #A1A1A1;
+    font-weight: bold;
+    font-size: 1.3rem;
+    outline: none;
+    position: absolute;
+    top: 8rem ;              
+    left: 43.5rem;
+}
+
+#page-recherche-profil-admin .barre-recherche::placeholder {
+    color: #A1A1A1; 
+    opacity: 1;
+}
+
+#page-recherche-profil-admin .search-form {
+    display: flex;
+    align-items: center;
+    margin-top: -15px; 
+    margin-bottom: 15px;
+}
+
+
+
+/* Header */
+/* Zone globale du header */
+.top-header {
+    width: 100%;
+    background-color: #F0E6D8; /* Beige clair identique à ton image */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Conteneur centré */
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo à gauche */
+/*test*/
+.logo img {
+    height: 70px;
+    width: auto;
+}
+
+/* Navigation au centre */
+.nav-links {
+    display: flex;
+    gap: 80px; /* comme sur ta maquette */
+    margin-right: 100px; /* équilibre visuel */
+}
+
+/* Liens */
+.nav-links a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;
+    font-family: "Times New Roman", serif; /* typo proche de ta maquette */
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #5a4a3a; /* brun doux */
+}
