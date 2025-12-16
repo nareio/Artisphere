@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Artisphere — Création de compte</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="frame">
+
+    <button class="retour" aria-label="Retour">Retour</button>
+
+    
+    <div class="center">
+      <div class="card">
+
+        <!-- Logo : remplace "logo.png" par ton image -->
+        <img class="logo" src="images/logo_site.png" alt="Logo Artisphere">
+
+        <div class="subtitle">Création de compte client</div>
+
+        <form autocomplete="off" novalidate>
+          <div class="field">
+            <input type="text" placeholder="Identifiant" aria-label="Identifiant">
+          </div>
+
+          <div class="field">
+            <input type="email" placeholder="Adresse mail" aria-label="Adresse mail">
+          </div>
+
+          <div class="field">
+            <input type="password" placeholder="Mot de passe" aria-label="Mot de passe">
+          </div>
+
+          <div class="field">
+            <input type="password" placeholder="Re-saisir le mot de passe" aria-label="Confirmer mot de passe">
+          </div>
+
+          <button class="btn" type="button">Créer le compte</button>
+        </form>
+
+        <div class="help">Besoin d’aide ?</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

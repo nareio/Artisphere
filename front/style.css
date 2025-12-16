@@ -1,0 +1,153 @@
+:root{
+    --bg: #b89372;        /* fond général */
+    --accent: #6c3f1f;    /* bouton marron */
+    --dark: #2e2218;      /* texte sombre */
+    --pill: #ffffff;      /* fond des champs */
+    --purple: #a057ff;    /* bouton retour */
+  }
+
+  html,body{
+    height:100%;
+    margin:0;
+    font-family: "Inter", "Poppins", Arial, sans-serif;
+    background: var(--bg);
+
+  }
+
+
+  .frame {
+    box-sizing:border-box;
+    background: var(--bg);
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+    position: relative;
+    border-radius: 6px;
+  }
+
+
+  .retour {
+    position:absolute;
+    top:22px;
+    left:28px;
+    background: var(--purple);
+    color:#fff;
+    border:none;
+    padding:8px 18px;
+    border-radius:18px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+  }
+
+
+
+ 
+  .center {
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:flex-start;           
+    justify-content:center;
+    padding-top:48px;                 
+  }
+
+  .card {
+    width: 380px;                   
+    max-width:90%;
+    text-align:center;
+    color:var(--dark);
+  }
+
+
+  .logo {
+    width:200px;
+    height:200PX;
+    object-fit:contain;
+    margin: 0 auto 8px;
+  }
+
+  .brand {
+    font-size:18px;
+    font-weight:700;
+    color:var(--dark);
+    letter-spacing:0.6px;
+    margin: 6px 0 4px;
+  }
+
+  .subtitle {
+    font-size:14px;
+    color:var(--dark);
+    margin: 8px 0 22px;
+  }
+
+
+  form {
+    width:100%;
+    display:block;
+  }
+
+  .field {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background: var(--pill);
+    border-radius:26px;
+    padding:12px 18px;
+    margin-bottom:16px; /* espacement identique entre champs */
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.02);
+  }
+
+  /* cercle icone */
+  .ico {
+    min-width:36px;
+    min-height:36px;
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+    color: #8a6b5b;
+    font-size:16px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"]{
+    border:0;
+    outline:0;
+    font-size:15px;
+    width:100%;
+    background:transparent;
+  }
+
+  .btn {
+    width:100%;
+    display:inline-block;
+    margin-top:8px;
+    padding:12px 18px;
+    background:var(--accent);
+    color:#fff;
+    border:0;
+    border-radius:22px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.06);
+  }
+
+  .help {
+    margin-top:14px;
+    font-size:12px;
+    color:var(--dark);
+  }
+
+  /* Ajustements responsive */
+  @media (max-width:420px){
+    .card{ width:92%; }
+    .logo{ width:100px; height:100px; }
+    .retour{ left:16px; top:16px; padding:7px 14px; }
+    .burger{ right:18px; top:20px; }
+  }
+
+
