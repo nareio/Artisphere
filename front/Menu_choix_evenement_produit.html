@@ -8,31 +8,53 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="header.css">
     <title>Document</title>
-<body>
-    <header class="top-header">
-        <div class="header-container">
 
-            <!-- Logo -->
-            <div class="logo">
-                <img src="images/logo_site.png" alt="Logo Artisphere">
-            </div>
+<body id="Menu_choix_evenement_produit">
 
-            <!-- Navigation -->
-            <nav class="nav-links">
-                <a href="/catalogue">CATALOGUE</a>
-                <a href="/artisan">ARTISAN</a>
-                <a href="/evenement">EVENEMENT</a>
-                <a href="/profil">PROFIL</a>
-            </nav>
+<!-- HEADER (identique FAQ / Événements) -->
+<header class="site-header">
+    <div class="header-inner">
 
+        <div class="logo-zone">
+             <img src="../public/images/logo_site.png" alt="Logo Artisphere" class="logo-img">
         </div>
-    </header>
-<div class="conteneur-parent"></div>
-<img src="images\image-bouton-evenement.png" class="image-evenement"/>
-<img src="images\image-bouton-produit.png" class="image-produit"/>
-    <button class="bouton-produit" type="button">Nouveau produit</button>
-    <div class="trait-vertical"></div>
-    <button class="bouton-evenement" type="button">Nouvel évènement</button>
+
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Catalogue</a>
+            <a href="artisans.html" class="nav-link active">Artisan</a>
+            <a href="evenement.html" class="nav-link">Évènement</a>
+        </nav>
+
+        <a href="profil.html" class="profile-icon" aria-label="Mon profil">
+            <span>👤</span>
+        </a>
     </div>
+</header>
+
+ <!-- Le Contenue -->
+<div class="conteneur-parent">
+
+<div class="colonne">
+        <img src="../public/images/image-bouton-produit.png" class="image-produit"/>
+        <button class="bouton-produit" type="button">Nouveau produit</button>
+</div>
+
+<div class="trait-vertical"></div>
+
+<div class="colonne">
+        <img src="../public/images/image-bouton-evenement.png" class="image-evenement"/>
+        <button class="bouton-evenement" type="button">Nouvel évènement</button>
+</div>   
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <a href="apropos.html" class="footer-link">À propos de nous</a>
+        <a href="mentions.html" class="footer-link">Mentions légales</a>
+        <a href="faq.html" class="footer-link">FAQ</a>
+    </div>
+</footer>
+
 </body>
 </html>

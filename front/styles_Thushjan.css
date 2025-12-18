@@ -1,19 +1,45 @@
-.trait-vertical {
-    height: 70vh;           
-    width: 2px;              
-    background-color: black;
-    margin: 10px auto; 
-    margin-top : 110px;
-    
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#Menu_choix_evenement_produit {
+    position: relative;    
+    width: 100%;
+    min-height: 600px;     
+    background-color: #bba38c;
 }
 
 .conteneur-parent {
-    position: relative; 
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    background-color: #bba38c;
+    position: relative;
 }
+
+.colonne{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.trait-vertical {
+    width: 4px;
+    height: 400px;          
+    background-color: black;
+    border-radius: 10px;     
+}
+
 
 .bouton-produit {
 position: absolute;
-top: 400px;            
+top: 21rem;            
 left: 200px;
 background-color: #887bb0 ;
 color : white;
@@ -32,7 +58,7 @@ font-family : 'Verdana';
 
 .bouton-evenement {
 position: absolute;
-top: 400px;              
+top: 21rem;              
 left: 1000px;
 background-color: #887bb0 ;
 color : white;
@@ -51,26 +77,15 @@ font-family : 'Verdana';
 .image-evenement {
 position: absolute;
 width: 200px;
-top: 193px;              
+top: 6.8rem;              
 left: 1050px;
-
 }
 
 .image-produit {
 position: absolute;
 width: 200px;
-top: 200px;              
+top: 7rem;              
 left: 250px;
-}
-
-.trait-vertical {
-width : 3px;
-border-radius: 30px;
-filter : grayscale(10%)
-}
-
-body{
-background-color: #daebf3;
 }
 
 .titre-produit {
@@ -79,6 +94,10 @@ position: absolute;
 top: 3rem ;              
 left: 40rem;
 }
+
+
+
+
 
 #page-produit .h2{
 color: #6e6295 !important;
@@ -405,6 +424,8 @@ left: 37rem;
     left: 38.5rem; 
 }
 
+
+
 #page-recherche-profil-admin {
     position: relative;    
     width: 100%;
@@ -489,10 +510,11 @@ left: 37rem;
     font-weight: bold;
 }
 
-.profile-bar div {
+.barre-grise div {
     display: flex;
-    gap: 15px; /* Espace entre les deux pastilles */
+    gap: 13px; /* Espace entre les deux pastilles */
 }
+
 
 .status-light {
     width: 25px;
@@ -581,6 +603,7 @@ left: 37rem;
     clear: both;          
     background: #f6e6cf;
     padding: 1rem;
+    width: 100%
 }
 
 
