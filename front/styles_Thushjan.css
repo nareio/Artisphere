@@ -405,50 +405,30 @@ left: 37rem;
     left: 38.5rem; 
 }
 
-
-
-#page-recherche-profil-admin .bouton-recherche {
-    border: none;
-    background-color: transparent; 
-    padding: 0; 
-    margin: 0;  
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 6rem ;              
-    left: 43.9rem;
+#page-recherche-profil-admin {
+    position: relative;    
+    width: 100%;
+    min-height: 600px;     
+    background-color: #bba38c;
 }
 
-#page-recherche-profil-admin .icone-loupe {
-    width: 100px; 
-    height: 30px;
-    display: block;
-    position: absolute;
-    bottom : 8.2rem ;              
-    right : 19.3rem;
-}
-
+/* Le pavé rose */
 #page-recherche-profil-admin .pave_rose {
     background-color: #f4b9b8;
     width: 40rem; 
     height: 15rem;
-    position: absolute;
-    top: 10.9rem ;              
-    left: 29rem;
+    margin-top: 8rem;; 
+    margin-left:28rem;
 }
 
+
+/* La barre de texte */
 #page-recherche-profil-admin .barre-recherche {
-    background: transparent;
-    border: none;
-    color: #A1A1A1;
-    font-weight: bold;
-    font-size: 1.3rem;
+    width: 300px;
+    padding: 10px 40px 10px 15px; 
+    border-radius: 20px;
+    border: 1px solid #ccc;
     outline: none;
-    position: absolute;
-    top: 8rem ;              
-    left: 43.5rem;
 }
 
 #page-recherche-profil-admin .barre-recherche::placeholder {
@@ -456,32 +436,105 @@ left: 37rem;
     opacity: 1;
 }
 
-#page-recherche-profil-admin .search-form {
-    display: flex;
-    align-items: center;
-    margin-top: -15px; 
-    margin-bottom: 15px;
+
+*#page-recherche-profil-admin  .search-form {
+    display: flex !important;
+    position: relative !important;
+    width: 23rem !important;    
+    margin: 0 auto 0 39% !important;
+    transform: translateY(5.9rem) !important; 
 }
 
+/* La loupe */
+#page-recherche-profil-admin .bouton-recherche {
+    position: absolute;
+    right: 1.4rem;
+    top: 0.30rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
 
+#page-recherche-profil-admin .icone-loupe {
+    width: 25px; 
+    height: auto;
+}
 
+/* CSS POUR LE JS */
+
+#resultsArea {
+    padding-top: 0.9rem ; 
+    padding-left: 0rem;   
+    padding-right: 0rem;  
+    align-items: stretch;
+}
+
+.barre-grise {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #737373; 
+    color: white;
+    padding: 10px 25px;
+    margin: 0px auto;
+    width: 92%;         
+    border-radius: 30px; 
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.profile-name, .account-type {
+    font-weight: bold;
+}
+
+.profile-bar div {
+    display: flex;
+    gap: 15px; /* Espace entre les deux pastilles */
+}
+
+.status-light {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; /* Rend les boutons parfaitement ronds */
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.light-green {
+    background-color: #add6b8; 
+}
+
+.light-red {
+    background-color: #a51c06; 
+}
 
 
 /* --------- HEADER --------- */
 
-.site-header {
-    background: #f6e6cf;
-    border-bottom: 1px solid #e2d5c0;
-}
 
 .header-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    height: 80px;
-    padding: 0 40px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-items: center;            
+    width: 100%;
+    max-width: 1100px;              
+    height: 80px;                  
+    margin: 0 auto;                 
+    padding: 0 40px;               
+}
+
+.site-header {
+    width: 100%;
+    min-height: 80px; 
+    background: #f6e6cf;
+    display: flex;
+    align-items: center; 
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1000; 
 }
 
 .logo-img {
@@ -522,10 +575,14 @@ left: 37rem;
 
 /* --------- FOOTER --------- */
 
+
 .site-footer {
+    position: relative;    
+    clear: both;          
     background: #f6e6cf;
-    padding: 1rem 0;
+    padding: 1rem;
 }
+
 
 .footer-inner {
     display: flex;

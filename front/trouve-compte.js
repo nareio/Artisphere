@@ -20,7 +20,7 @@ searchForm.addEventListener('submit', function(evenement) {
 function creerBarreUtilisateur(nom) {
     
     const nouvelleBarre = document.createElement('div');
-    nouvelleBarre.className = 'profile-bar';
+    nouvelleBarre.className = 'barre-grise';
     nouvelleBarre.innerHTML = `
         <span class="profile-name">${nom.toUpperCase()}</span>
         <span class="account-type">COMPTE ARTISAN</span>
@@ -30,7 +30,7 @@ function creerBarreUtilisateur(nom) {
         </div>
     `;
 
-
+//Si on appuie sur le bouton vert
 nouvelleBarre.querySelector('.light-green').onclick = function() {
     
     // On demande confirmation avant de donner des droits
@@ -55,7 +55,7 @@ nouvelleBarre.querySelector('.light-green').onclick = function() {
     }
 };
 
-
+//Si on appuie sur le bouton rouge
 nouvelleBarre.querySelector('.light-red').onclick = function() {
     if (confirm("Supprimer définitivement de la base de données ?")) {
         
