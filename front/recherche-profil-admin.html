@@ -9,15 +9,15 @@
 
 <body id="page-recherche-profil-admin">
  
- <form class="search-form"></form>
- <input type="text"  class="barre-recherche" placeholder="RECHERCHE"  name="recherche">
-  <button class="bouton-recherche">
+ <form class="search-form" id="searchForm"></form>
+ <input type="text"  class="barre-recherche" id="searchInput"placeholder="RECHERCHE"  name="recherche">
+  <button type="submit"class="bouton-recherche">
  <img src="images\loupe.png" alt="Rechercher" class="icone-loupe">
 </button>
 </form>
 
-<div class="pave_rose ">
+<div class="pave_rose" id="resultsArea">
 </div>
-
+<script src="trouve-compte.js"></script>
 </body>
 </html>
