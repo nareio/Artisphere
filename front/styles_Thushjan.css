@@ -96,14 +96,26 @@ left: 40rem;
 }
 
 
-#page-fiche-evenement {
+/*#page-fiche-evenement {
     position: relative;    
     width: 100%;
     min-height: 600px;     
     background-color: #bba38c;
+}*/
+
+#page-fiche-evenement {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Force la hauteur à 100% de l'écran minimum */
+    padding-bottom: 100px; /* Espace pour ne pas que le footer cache le bouton Enregistrer */
+    background-color: #bba38c;
+    display: flex;
+    flex-direction: column;
 }
 
-
+.site-footer {
+    margin-top: auto; /* Pousse le footer tout en bas si le contenu est court */
+}
 
 #page-fiche-evenement .bouton-enregistrerV2{
 position: absolute;
@@ -250,10 +262,18 @@ color : rgba(136, 123, 176, 0.7);
     left: 37rem;
 }
 
+
+#page-fiche-produit {
+    background-color: #bba38c;
+    width: 100%;
+    position: relative; 
+    flex: 1; 
+    min-height: 900px; 
+}
+
 #page-produit .h2{
 color: #6e6295 !important;
 }
-
 
 #page-fiche-produit .Quantités{
     border-radius: 30px;
@@ -424,6 +444,8 @@ left: 37rem;
 #page-fiche-produit .bouton-enregistrer:hover {
     background-color: #27DAF5;
 }
+
+
 
 /*Page recherche profil admin*/
 #page-recherche-profil-admin {
