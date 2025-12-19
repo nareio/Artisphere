@@ -96,31 +96,14 @@ left: 40rem;
 }
 
 
-
-
-
-#page-produit .h2{
-color: #6e6295 !important;
-
+#page-fiche-evenement {
+    position: relative;    
+    width: 100%;
+    min-height: 600px;     
+    background-color: #bba38c;
 }
 
-#page-fiche-produit .bouton-enregistrer{
-position: absolute;
-background-color: #887bb0 ;
-color : white;
-text-align: center;
-border-radius: 30px;
-padding: 1%;
-width: 120px;
-height: 30px;
-line-height: 0px;
-font-family : 'Verdana';
-font-weight: bold;
-   position: absolute;
-    top: 41.5rem ;              
-    left: 53.5rem; 
-    cursor: pointer;
-}
+
 
 #page-fiche-evenement .bouton-enregistrerV2{
 position: absolute;
@@ -140,30 +123,10 @@ font-weight: bold;
     cursor: pointer;
 }
 
-#page-fiche-produit .importimage{
-    opacity: 0; 
-    overflow: hidden;
-    position: absolute; 
-}
-
 #page-fiche-evenement .importimage{
     opacity: 0; 
     overflow: hidden;
     position: absolute; 
-}
-
-#page-fiche-produit .Quantités{
-    border-radius: 30px;
-    background-color:rgba(136, 123, 176, 0.7);
-    font-family : 'Verdana';
-    font-weight: bold;
-    border: none;
-    padding: 1%;
-    width: 140px;
-    height: 10px; 
-    position: absolute;
-    top: 20.5rem ;              
-    left: 43.5rem;  
 }
 
 #page-fiche-evenement .Places{
@@ -194,6 +157,118 @@ font-weight: bold;
     left: 40rem;  
 }
 
+#page-fiche-evenement .choixcategorie{
+    border-radius: 30px;
+    background-color:rgba(136, 123, 176, 0.7);
+    font-family : 'Verdana';
+    font-weight: bold;
+    border: none;
+    padding: 1%;
+    width: 300px;
+    height: 50px;   
+    position: absolute;
+    top: 15rem ;              
+    left: 43.5rem;
+}
+
+#page-fiche-evenement .DescriptionV2{
+    border-radius: 30px;
+    background-color:rgba(136, 123, 176, 0.7);
+    font-family : 'Verdana';
+    font-weight: bold;
+    border: none;
+    padding: 1%;
+    width: 370px;
+    height: 100px;   
+    position: absolute;
+    top: 26.5rem ;              
+    left: 36.5rem;  
+}
+
+#page-fiche-evenement .para_evenement{
+font-family : 'Verdana';
+color : rgba(136, 123, 176, 0.7);
+position: absolute;
+top: 8rem ;              
+left: 47rem;
+}
+
+#page-fiche-evenement .para_places{
+font-family : 'Verdana';
+color : rgba(136, 123, 176, 0.7);
+position: absolute;
+top: 21rem ;              
+left: 37rem; 
+}
+
+#page-fiche-evenement .para_lieu{
+font-family : 'Verdana';
+color : rgba(136, 123, 176, 0.7);
+position: absolute;
+top: 16rem ;              
+left: 37rem; 
+}
+
+#page-fiche-evenement .nom_produit{
+    border-radius: 30px;
+    background-color:rgba(136, 123, 176, 0.7);
+    font-family : 'Verdana';
+    font-weight: bold;
+    border: none;
+    padding: 1%;
+    width: 200px;
+    height: 20px;   
+    vertical-align: top;
+    text-align: auto;
+    position: absolute;
+    top: 10.5rem ;              
+    left: 45.5rem;
+} 
+
+#page-fiche-evenement .imagerond {
+    width: 80px;
+    height: 80px;
+    background-color: #27DAF5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    user-select: none;
+    position: absolute;
+    top: 9.0rem ;              
+    left: 38.5rem; 
+}
+
+#page-fiche-evenement .para_descriptionV2{
+font-family : 'Verdana';
+color : rgba(136, 123, 176, 0.7);
+    position: absolute;
+    top: 23rem ;              
+    left: 37rem;
+}
+
+#page-produit .h2{
+color: #6e6295 !important;
+}
+
+
+#page-fiche-produit .Quantités{
+    border-radius: 30px;
+    background-color:rgba(136, 123, 176, 0.7);
+    font-family : 'Verdana';
+    font-weight: bold;
+    border: none;
+    padding: 1%;
+    width: 140px;
+    height: 10px; 
+    position: absolute;
+    top: 20.5rem ;              
+    left: 43.5rem;  
+}
+
 #page-fiche-produit .Matériaux{
     border-radius: 30px;
     background-color:rgba(136, 123, 176, 0.7);
@@ -222,18 +297,12 @@ font-weight: bold;
     left: 43.5rem;
 }
 
-#page-fiche-evenement .choixcategorie{
-    border-radius: 30px;
-    background-color:rgba(136, 123, 176, 0.7);
-    font-family : 'Verdana';
-    font-weight: bold;
-    border: none;
-    padding: 1%;
-    width: 300px;
-    height: 50px;   
-    position: absolute;
-    top: 15rem ;              
-    left: 43.5rem;
+#page-fiche-produit .para_produit{
+font-family : 'Verdana';
+color : rgba(136, 123, 176, 0.7);
+position: absolute;
+top: 8rem ;              
+left: 48rem;
 }
 
 #page-fiche-produit .para_catégorie{
@@ -258,16 +327,24 @@ color : rgba(136, 123, 176, 0.7);
     position: absolute;
     top: 28rem ;              
     left: 37rem;
-
 }
 
-#page-fiche-evenement .para_descriptionV2{
+#page-fiche-produit .bouton-enregistrer{
+position: absolute;
+background-color: #887bb0 ;
+color : white;
+text-align: center;
+border-radius: 30px;
+padding: 1%;
+width: 120px;
+height: 30px;
+line-height: 0px;
 font-family : 'Verdana';
-color : rgba(136, 123, 176, 0.7);
-    position: absolute;
-    top: 23rem ;              
-    left: 37rem;
-
+font-weight: bold;
+   position: absolute;
+    top: 41.5rem ;              
+    left: 53.5rem; 
+    cursor: pointer;
 }
 
 #page-fiche-produit .Description{
@@ -284,35 +361,27 @@ color : rgba(136, 123, 176, 0.7);
     left: 36.5rem;  
 }
 
-#page-fiche-evenement .DescriptionV2{
-    border-radius: 30px;
-    background-color:rgba(136, 123, 176, 0.7);
-    font-family : 'Verdana';
-    font-weight: bold;
-    border: none;
-    padding: 1%;
-    width: 370px;
-    height: 100px;   
-    position: absolute;
-    top: 26.5rem ;              
-    left: 36.5rem;  
+#page-fiche-produit .imagerond {
+    width: 80px;
+    height: 80px;
+    background-color: #27DAF5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    user-select: none;
+       position: absolute;
+    top: 9.0rem ;              
+    left: 38.5rem; 
 }
 
-
-#page-fiche-produit .para_produit{
-font-family : 'Verdana';
-color : rgba(136, 123, 176, 0.7);
-position: absolute;
-top: 8rem ;              
-left: 48rem;
-}
-
-#page-fiche-evenement .para_evenement{
-font-family : 'Verdana';
-color : rgba(136, 123, 176, 0.7);
-position: absolute;
-top: 8rem ;              
-left: 47rem;
+#page-fiche-produit .importimage{
+    opacity: 0; 
+    overflow: hidden;
+    position: absolute; 
 }
 
 #page-fiche-produit .catégorie{
@@ -336,39 +405,7 @@ top: 21rem ;
 left: 37rem; 
 }
 
-#page-fiche-evenement .para_places{
-font-family : 'Verdana';
-color : rgba(136, 123, 176, 0.7);
-position: absolute;
-top: 21rem ;              
-left: 37rem; 
-}
-
-#page-fiche-evenement .para_lieu{
-font-family : 'Verdana';
-color : rgba(136, 123, 176, 0.7);
-position: absolute;
-top: 16rem ;              
-left: 37rem; 
-}
-
 #page-fiche-produit .nom_produit{
-    border-radius: 30px;
-    background-color:rgba(136, 123, 176, 0.7);
-    font-family : 'Verdana';
-    font-weight: bold;
-    border: none;
-    padding: 1%;
-    width: 200px;
-    height: 20px;   
-    vertical-align: top;
-    text-align: auto;
-    position: absolute;
-    top: 10.5rem ;              
-    left: 45.5rem;
-} 
-
-#page-fiche-evenement .nom_produit{
     border-radius: 30px;
     background-color:rgba(136, 123, 176, 0.7);
     font-family : 'Verdana';
@@ -388,44 +425,7 @@ left: 37rem;
     background-color: #27DAF5;
 }
 
-
-#page-fiche-produit .imagerond {
-    width: 80px;
-    height: 80px;
-    background-color: #27DAF5;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: white;
-    font-size: 20px;
-    user-select: none;
-       position: absolute;
-    top: 9.0rem ;              
-    left: 38.5rem; 
-}
-
-
-#page-fiche-evenement .imagerond {
-    width: 80px;
-    height: 80px;
-    background-color: #27DAF5;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: white;
-    font-size: 20px;
-    user-select: none;
-    position: absolute;
-    top: 9.0rem ;              
-    left: 38.5rem; 
-}
-
-
-
+/*Page recherche profil admin*/
 #page-recherche-profil-admin {
     position: relative;    
     width: 100%;
