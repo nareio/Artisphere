@@ -263,6 +263,7 @@ color : rgba(136, 123, 176, 0.7);
 }
 
 
+
 #page-fiche-produit {
     background-color: #bba38c;
     width: 100%;
@@ -275,6 +276,23 @@ color : rgba(136, 123, 176, 0.7);
 color: #6e6295 !important;
 }
 
+#page-fiche-produit .form-card {
+    background-color: #E2D1C3; /* Un beige très clair qui va avec ton fond */
+    width: 550px;
+    height: 550px;
+    margin: 50px auto; /* Centre le carré sur la page */
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    
+    /* Pour que les éléments dedans s'alignent bien */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+
+
 #page-fiche-produit .Quantités{
     border-radius: 30px;
     background-color:rgba(136, 123, 176, 0.7);
@@ -285,7 +303,7 @@ color: #6e6295 !important;
     width: 140px;
     height: 10px; 
     position: absolute;
-    top: 20.5rem ;              
+    top: 23.5rem ;              
     left: 43.5rem;  
 }
 
@@ -299,7 +317,7 @@ color: #6e6295 !important;
     width: 140px;
     height: 10px;   
     position: absolute;
-    top: 24.5rem ;              
+    top: 27.5rem ;              
     left: 43.5rem;  
 }
 
@@ -313,7 +331,7 @@ color: #6e6295 !important;
     width: 300px;
     height: 50px;   
     position: absolute;
-    top: 15rem ;              
+    top: 18rem ;              
     left: 43.5rem;
 }
 
@@ -321,7 +339,7 @@ color: #6e6295 !important;
 font-family : 'Verdana';
 color : rgba(136, 123, 176, 0.7);
 position: absolute;
-top: 8rem ;              
+top: 11rem ;              
 left: 48rem;
 }
 
@@ -329,7 +347,7 @@ left: 48rem;
 font-family : 'Verdana';
 color : rgba(136, 123, 176, 0.7);
 position: absolute;
-top: 16rem ;              
+top: 19rem ;              
 left: 37rem; 
 }
 
@@ -345,7 +363,7 @@ left: 37rem;
 font-family : 'Verdana';
 color : rgba(136, 123, 176, 0.7);
     position: absolute;
-    top: 28rem ;              
+    top: 30rem ;              
     left: 37rem;
 }
 
@@ -362,7 +380,7 @@ line-height: 0px;
 font-family : 'Verdana';
 font-weight: bold;
    position: absolute;
-    top: 41.5rem ;              
+    top: 43.5rem ;              
     left: 53.5rem; 
     cursor: pointer;
 }
@@ -377,7 +395,7 @@ font-weight: bold;
     width: 370px;
     height: 100px;   
     position: absolute;
-    top: 31.5rem ;              
+    top: 33.5rem ;              
     left: 36.5rem;  
 }
 
@@ -394,7 +412,7 @@ font-weight: bold;
     font-size: 20px;
     user-select: none;
        position: absolute;
-    top: 9.0rem ;              
+    top: 12.0rem ;              
     left: 38.5rem; 
 }
 
@@ -413,7 +431,7 @@ color : rgba(136, 123, 176, 0.7);
 font-family : 'Verdana';
 color : rgba(136, 123, 176, 0.7);
 position: absolute;
-top: 24rem ;              
+top: 27rem ;              
 left: 37rem; 
 }
 
@@ -421,7 +439,7 @@ left: 37rem;
 font-family : 'Verdana';
 color : rgba(136, 123, 176, 0.7);
 position: absolute;
-top: 21rem ;              
+top: 24rem ;              
 left: 37rem; 
 }
 
@@ -437,7 +455,7 @@ left: 37rem;
     vertical-align: top;
     text-align: auto;
     position: absolute;
-    top: 10.5rem ;              
+    top: 13.5rem ;              
     left: 45.5rem;
 } 
 
