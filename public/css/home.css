@@ -212,3 +212,76 @@
   border-radius: 999px;
 }
 .card-link:hover{ filter: brightness(.97); }
+
+
+/* ===== allow horizontal scrolling ===== */
+  .home-products,
+  .home-events {
+    flex-wrap: nowrap;      /* keep cards on one line */
+    overflow-x: auto;       /* enable sideways scroll */
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  /* each card snaps nicely while scrolling */
+  .product-card,
+  .event-card {
+    scroll-snap-align: start;
+    flex: 0 0 auto;        /* prevent shrinking */
+  }
+
+  /* optional: hide scrollbar on some browsers */
+  .home-products::-webkit-scrollbar,
+  .home-events::-webkit-scrollbar {
+    display: none;
+  }
+
+
+/* ========== MEDIUM SCREENS (tablets) ========== */
+@media (max-width: 1200px) {
+  .home-hero {
+    padding: 40px 24px 24px;
+  }
+
+  /* Reserve less space on the right for the CTA */
+  .home-hero__left {
+    padding-right: 200px; /* was 360px */
+  }
+
+  /* Make the CTA a bit smaller + closer to the text */
+  .home-cta {
+    width: 220px;     /* was 320px */
+    right: 14px;      /* was 40px */
+    top: 24px;        /* was 32px */
+  }
+
+  .home-hero__text {
+    font-size: 20px;  /* slightly smaller text so it fits nicely */
+  }
+}
+
+
+/* ========== small SCREENS (phones) ========== */
+@media (max-width: 768px) {
+  .home-hero {
+    padding: 32px 18px 24px;
+  }
+
+  /* No extra space on the right */
+  .home-hero__left {
+    padding-right: 0;
+  }
+
+  /* CTA becomes a normal block below the text */
+  .home-cta {
+    position: static;        /* not absolute */
+    width: 100%;
+    max-width: 360px;
+    margin: 24px auto 0;     /* centered under the text */
+  }
+
+  .home-hero__right {
+    justify-content: center; /* CTA centered horizontally */
+  }
+}
+

@@ -403,8 +403,60 @@ left: 37rem;
     color: white;
     font-size: 20px;
     user-select: none;
-       position: absolute;
+    position: absolute;
     top: 9.0rem ;              
     left: 38.5rem; 
 }
 
+
+/* ========== RESPONSIVE (keep 2 sides but smaller) ========== */
+@media (max-width: 1200px){
+
+  /* make the parent the reference and add spacing */
+  .conteneur-parent{
+    position: relative;
+    min-height: 520px;
+    padding: 20px 12px 30px;
+  }
+
+  /* vertical line stays centered */
+  .trait-vertical{
+    height: 60vh;
+    margin-top: 90px;
+  }
+
+  /* reset absolute positions to be responsive (percent) */
+  .image-produit{
+    width: 140px;
+    top: 160px;
+    left: 12%;
+  }
+
+  .bouton-produit{
+    top: 340px;
+    left: 8%;
+    width: 38%;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .image-evenement{
+    width: 140px;
+    top: 160px;
+    left: 68%;
+  }
+
+  .bouton-evenement{
+    top: 340px;
+    left: 54%;
+    width: 38%;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  /* small safety: buttons always centered text */
+  .bouton-produit,
+  .bouton-evenement{
+    text-align: center;
+  }
+}

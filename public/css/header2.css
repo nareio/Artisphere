@@ -122,3 +122,63 @@ header{
 #connected-profil-zone{
 
 }*/
+
+
+/* ========== small SCREENS (phones) ========== */
+@media (max-width: 900px){
+
+    .header-inner{
+        height: auto;
+        padding: 10px 14px;
+
+        display: grid;
+        grid-template-columns: auto 1fr;  /* logo | nav */
+        grid-template-rows: auto auto;    /* top row + profile row */
+        align-items: center;
+        gap: 8px 14px;
+    }
+
+  /* top row */
+    .logo-zone{
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+    }
+
+    .logo-img{
+        height: 62px;          /* adapte si ton logo est trop grand/petit */
+        width: auto;
+    }
+
+    .main-nav{
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+
+        display: flex;
+        gap: 1rem;
+        flex-wrap: nowrap;
+        min-width: 0;
+    }
+
+    .nav-link{
+        font-size: 0.9rem;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+        padding-bottom: 0px;
+    }
+
+    /* second row */
+    .profile-zone{
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .profile-icon{
+        width: 36px;
+        height: 36px;
+    }
+
+}
