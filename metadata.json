@@ -1,0 +1,8 @@
+
+{
+  "name": "Artisphère",
+  "description": "A premium platform for local artisans and creators to showcase and sell products and events. Features role-based access for clients, artisans, and administrators.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
