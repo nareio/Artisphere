@@ -18,6 +18,11 @@
     border-right: 1px solid #e4c8a1;
 }
 
+/* Sidebar toggle button to not appeare in big screen */
+.sidebar-toggle {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
 .search-form input {
     width: 100%;
     padding: 6px 10px;
@@ -147,33 +152,58 @@
 }
 
 
-/* ===== RESPONSIVE GRID ===== */
 
-/* Medium screens (tablets, small laptops) */
-@media (max-width: 1100px) {
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 per row */
-    }
-}
-
-/* Small screens (tablets / big phones) */
-@media (max-width: 900px) {
+/* Small screens (tablets ) */
+@media (max-width: 1350px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 per row */
     }
-}
 
-/* Very small screens (phones) */
-@media (max-width: 600px) {
-    .main-content {
-        flex-direction: column; /* sidebar on top */
+    /* Hide sidebar by default on small screens */
+    .sidebar {
+        position: absolute;
+        top: 134px;
+        left: 0;
+        height: 100vh;
+        background-color: #c9a47c;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
     }
 
-    .sidebar {
-        width: 100%;
+    /* Sidebar visible when opened */
+    .sidebar.open {
+        transform: translateX(0);
+        width: 40%;
         border-right: none;
         border-bottom: 1px solid #e4c8a1;
         margin-bottom: 20px;
+        background: #f6e6cf;
+    }
+            /* .sidebar {
+                width: 230px;
+                padding: 0 30px;
+                border-right: 1px solid #e4c8a1;
+            }*/
+
+    /* Sidebar toggle button (mobile only) */
+    .sidebar-toggle {
+        position: absolute;
+        top: 80px;
+        left: 60px;
+        z-index: 1100;
+        background: #f6e6cf;
+        border: 0px solid #ffffff;
+        font-size: 22px;
+        padding: 6px 10px;
+        cursor: pointer;
+    }
+}
+
+/* small screens (phones) */
+@media (max-width: 600px) {
+    .main-content {
+        flex-direction: column; /* sidebar on top */
     }
 
     .products {

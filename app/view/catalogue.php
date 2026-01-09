@@ -1,7 +1,12 @@
 <!-- MAIN CONTENT -->
 <main class="main-content">
+    <!-- Sidebar toggle button (mobile & desktop) -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+        ☰
+    </button>
+
     <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
         <!-- search form -->
         <form class="search-form">
             <input type="search" placeholder="Rechercher">
@@ -69,3 +74,11 @@
     </section>
 </main>
 
+<script>
+    const toggleBtn = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+</script>
