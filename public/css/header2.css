@@ -35,7 +35,7 @@ header{
 }
 
 .logo-img {
-    height: 72px;          /* adapte si ton logo est trop grand/petit */
+    height: 82px;          /* adapte si ton logo est trop grand/petit */
     width: auto;
 }
 
@@ -145,8 +145,8 @@ header{
         justify-self: start;
     }
 
-    .logo-img{
-        height: 62px;          /* adapte si ton logo est trop grand/petit */
+    .logo-img {
+        height: 65px;          /* adapte si ton logo est trop grand/petit */
         width: auto;
     }
 
