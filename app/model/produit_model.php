@@ -106,4 +106,39 @@ class ProduitModel
 
         return $stmt->rowCount() > 0;
     }
+
+    public static function listByCategory(int $categoryId, int $limit, int $offset): array
+    {
+        $pdo = Database::getConnection();
+
+        $sql = "SELECT id_produit, nom, image, prix
+                FROM pproduit
+                WHERE id_categorie = :cat
+                ORDER BY id_produit DESC
+                LIMIT :lim OFFSET :off";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':cat', $categoryId, PDO::PARAM_INT);
+        $stmt->bindValue(':lim', $limit, PDO::PARAM_INT);
+        $stmt->bindValue(':off', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function countByCategory(int $categoryId): int
+    {
+        $pdo = Database::getConnection();
+
+        $sql = "SELECT COUNT(*)
+                FROM pproduit
+                WHERE id_categorie = :cat";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':cat', $categoryId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return (int)$stmt->fetchColumn();
+    }
+
 }

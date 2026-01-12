@@ -1,6 +1,6 @@
 <!-- MAIN CONTENT -->
 <main class="main-content">
-    <!-- Sidebar toggle button (mobile & desktop) -->
+    <!-- Sidebar toggle button (mobile) -->
     <button class="sidebar-toggle" id="sidebarToggle">
         ☰
     </button>
@@ -14,21 +14,43 @@
 
         <div class="categories-title">CATEGORIES :</div>
         <ul class="categories-list">
-            <li><a href="#" class="active">TOUS LES PRODUITS</a></li>
-            <li><a href="#">TABLEAUX</a></li>
-            <li><a href="#">ARTISANAT</a></li>
+            <?php
+                // "All products" is active when no category filter
+                $allActive = empty($currentCat) ? 'active' : '';
+            ?>
+            <li>
+                <a class="<?= $allActive ?>"
+                href="/artisphere/?controller=catalogue&action=index">
+                    TOUS LES PRODUITS
+                </a>
+            </li>
+
+            <?php if (!empty($categories)): ?>
+                <?php foreach ($categories as $c): ?>
+                    <?php
+                        $isActive = (!empty($currentCat) && (int)$currentCat === (int)$c['id_categorie']) ? 'active' : '';
+                    ?>
+                    <li>
+                        <a class="<?= $isActive ?>"
+                        href="/artisphere/?controller=catalogue&action=index&cat=<?= (int)$c['id_categorie'] ?>">
+                            <?= htmlspecialchars($c['nom'], ENT_QUOTES, 'UTF-8') ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
+
     </aside>
 
     <!-- RIGHT PRODUCTS AREA -->
     <section class="products">
-        <h1 class="products-title">TOUS LES PRODUITS</h1>
+        <h1 class="products-title">LES PRODUITS</h1>
 
         <div class="product-grid">
             <?php if (!empty($produits)): ?>
                 <?php foreach ($produits as $p): ?>
                     <?php
-                        // Build image path (same logic as on the home page)
+                        // Build image path 
                         $imgPath = !empty($p['image'])
                             ? "images/produits/" . $p['image']
                             : "/artisphere/images/produit.png";
@@ -58,8 +80,8 @@
                             </div>
 
                             <a class="product-link"
-                               href="/artisphere/?controller=produit_show&action=show&id=<?= (int)$p['id_produit'] ?>">
-                                Voir
+                                href="/artisphere/?controller=produit_show&action=show&id=<?= (int)$p['id_produit'] ?>">
+                                    Voir
                             </a>
                         </div>
                     </div>
@@ -69,16 +91,32 @@
             <?php endif; ?>
         </div>
 
-        <!-- arrow on the right -->
-        <button class="arrow-next">&#8250;</button>
+        <!-- arrows at the end -->
+        <?php if (!empty($pagesTotal) && $pagesTotal > 1): ?>
+            <div class="page-swiper">
+
+                <?php if ($page > 1): ?>
+                    <a class="next-previous"
+                        href="/artisphere/?controller=catalogue&action=index&page=<?= $page - 1 ?>">
+                            ← Previous
+                    </a>
+                <?php endif; ?>
+
+                <span class="catalogue-page-count">
+                    Page <?= (int)$page ?> / <?= (int)$pagesTotal ?>
+                </span>
+
+                <?php if ($page < $pagesTotal): ?>
+                    <a class="next-previous"
+                        href="/artisphere/?controller=catalogue&action=index&page=<?= $page + 1 ?>">
+                            Next →
+                    </a>
+                <?php endif; ?>
+
+            </div>
+        <?php endif; ?>
+
+
     </section>
 </main>
 
-<script>
-    const toggleBtn = document.getElementById('sidebarToggle');
-    const sidebar = document.getElementById('sidebar');
-
-    toggleBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-    });
-</script>
