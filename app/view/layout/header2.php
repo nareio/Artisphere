@@ -12,8 +12,23 @@
     ?>
     <base href="<?= htmlspecialchars($base . '/', ENT_QUOTES, 'UTF-8') ?>">
 
+    <!-- Replace the two CSS links with these -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/header2.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/interactions.css">
+
+    <!-- Add before closing </head> -->
+    <script src="js/interactions.js" defer></script>
+    <script src="js/accessibility.js" defer></script>
+
+    <!-- Add after opening <body> tag -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="a11y-announcement" aria-live="polite" aria-atomic="true"></div>
 
     <?php if (!empty($pageCss)): ?>
         <link rel="stylesheet" href="css/<?= htmlspecialchars($pageCss, ENT_QUOTES, 'UTF-8') ?>">
@@ -31,11 +46,21 @@
         </div>
 
         <!-- MENU AU CENTRE -->
-        <nav class="main-nav">
-            <a href="/artisphere/?controller=catalogue&action=index" class="nav-link">Catalogue</a>
-            <a href="/artisphere/?controller=artisans&action=index" class="nav-link">Artisan</a>
-            <a href="/artisphere/?controller=evenement&action=index" class="nav-link">Évènement</a>
+        <nav class="main-nav" role="navigation" aria-label="Menu principal">
+            <a href="?controller=catalogue&action=index" class="nav-link"><?= $lang['catalogue'] ?? 'Catalogue' ?></a>
+            <a href="?controller=artisans&action=index" class="nav-link"><?= $lang['artisan'] ?? 'Artisan' ?></a>
+            <a href="?controller=evenement&action=index" class="nav-link"><?= $lang['event'] ?? 'Évènement' ?></a>
         </nav>
+
+        <div class="lang-switcher" role="group" aria-label="Language selection">
+            <?php $currentLang = $_SESSION['user']['lang'] ?? 'fr'; ?>
+            <a href="?<?= http_build_query(array_merge($_GET, ['lang' => 'fr'])) ?>" 
+                class="<?= $currentLang === 'fr' ? 'active' : '' ?>" 
+                aria-label="Français">FR</a>
+            <a href="?<?= http_build_query(array_merge($_GET, ['lang' => 'en'])) ?>" 
+                class="<?= $currentLang === 'en' ? 'active' : '' ?>" 
+                aria-label="English">EN</a>
+        </div>
 
         <!--gere la redirection de l'icone profil quand un utilisateur est connecter ou non-->
         <?php

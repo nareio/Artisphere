@@ -3,6 +3,7 @@
 
 class BaseController
 {
+    protected array $lang = [];
 
     public function __construct()
     {
@@ -10,7 +11,23 @@ class BaseController
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
+        $lang = $_SESSION['user']['lang'] ?? $_GET['lang'] ?? 'fr';
+        $this->setLanguage($lang);
     }
+
+    protected function setLanguage(string $lang): void
+    {
+        $lang = in_array($lang, ['fr', 'en']) ? $lang : 'fr';
+        $_SESSION['user']['lang'] = $lang;
+        $langFile = dirname(__DIR__) . "/lang/{$lang}.php";
+        $this->lang = file_exists($langFile) ? require $langFile : [];
+    }
+    
+    protected function lang(string $key): string
+    {
+        return $this->lang[$key] ?? $key;
+    }
+    
 
     /**
      * $view : nom du fichier vue sous app/view (ex : 'home.php', 'FAQ.html')
@@ -30,6 +47,10 @@ class BaseController
 
         // On rend les variables accessibles dans la vue : $title, $dbMessage, etc.
         extract($params);
+
+        if (!isset($pageCss)) $pageCss = '';
+        if (!isset($pageJs)) $pageJs = [];
+        if (!isset($lang)) $lang = $this->lang;
 
         // On inclut le header, puis la vue, puis le footer
         require $root . '/view/layout/header2.php';
