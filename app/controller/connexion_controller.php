@@ -58,6 +58,9 @@ class connexion_controller extends BaseController
             'avatar' => $user['avatar'] ?? null,
         ];
 
+        setcookie('artisphere_user', $user['pseudo'], time() + 3600 * 24 * 7, '/');
+
+
         header('Location: /artisphere/?controller=index&action=index');
         exit;
     }
@@ -67,6 +70,8 @@ class connexion_controller extends BaseController
     {
         session_start();
         session_destroy();
+
+        setcookie('artisphere_user', '', time() - 3600, '/');
 
         header('Location: /artisphere/?controller=index&action=index');
         exit;

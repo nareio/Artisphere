@@ -8,8 +8,8 @@
     <!-- LEFT SIDEBAR -->
     <aside class="sidebar" id="sidebar">
         <!-- search form -->
-        <form class="search-form">
-            <input type="search" placeholder="Rechercher">
+        <form class="search-form" onsubmit="return false;">
+            <input type="search" id="productSearch" placeholder="Search products">
         </form>
 
         <div class="categories-title">CATEGORIES :</div>
@@ -17,10 +17,16 @@
             <?php
                 // "All products" is active when no category filter
                 $allActive = empty($currentCat) ? 'active' : '';
+
+                // Base URL for clean routing (keeps category if selected)
+                $baseUrl = "/artisphere/catalogue";
+                if (!empty($currentCat)) {
+                    $baseUrl .= "/category/" . (int)$currentCat;
+                }
             ?>
             <li>
                 <a class="<?= $allActive ?>"
-                href="/artisphere/?controller=catalogue&action=index">
+                   href="/artisphere/catalogue">
                     TOUS LES PRODUITS
                 </a>
             </li>
@@ -32,7 +38,7 @@
                     ?>
                     <li>
                         <a class="<?= $isActive ?>"
-                        href="/artisphere/?controller=catalogue&action=index&cat=<?= (int)$c['id_categorie'] ?>">
+                           href="/artisphere/catalogue/category/<?= (int)$c['id_categorie'] ?>">
                             <?= htmlspecialchars($c['nom'], ENT_QUOTES, 'UTF-8') ?>
                         </a>
                     </li>
@@ -79,6 +85,7 @@
                                 <?= $price ?> €
                             </div>
 
+                            <!-- Keep this as-is for now (not part of catalogue rewriting) -->
                             <a class="product-link"
                                 href="/artisphere/?controller=produit_show&action=show&id=<?= (int)$p['id_produit'] ?>">
                                     Voir
@@ -97,8 +104,8 @@
 
                 <?php if ($page > 1): ?>
                     <a class="next-previous"
-                        href="/artisphere/?controller=catalogue&action=index&page=<?= $page - 1 ?>">
-                            ← Previous
+                       href="<?= $baseUrl ?>/page/<?= $page - 1 ?>">
+                        ← Previous
                     </a>
                 <?php endif; ?>
 
@@ -108,15 +115,13 @@
 
                 <?php if ($page < $pagesTotal): ?>
                     <a class="next-previous"
-                        href="/artisphere/?controller=catalogue&action=index&page=<?= $page + 1 ?>">
-                            Next →
+                       href="<?= $baseUrl ?>/page/<?= $page + 1 ?>">
+                        Next →
                     </a>
                 <?php endif; ?>
 
             </div>
         <?php endif; ?>
 
-
     </section>
 </main>
-

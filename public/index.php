@@ -1,4 +1,37 @@
 <?php
+$path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+$parts = $path === '' ? [] : explode('/', $path);
+
+// remove "artisphere" folder name from URL parts
+if (!empty($parts) && $parts[0] === 'artisphere') {
+    array_shift($parts);
+}
+
+// if URL is like /catalogue/page/2 or /catalogue/category/3/page/2
+if (!empty($parts)) {
+    $_GET['controller'] = $parts[0];
+    $_GET['action'] = 'index';
+
+    for ($i = 1; $i < count($parts); $i += 2) {
+        if (isset($parts[$i + 1])) {
+            // page/2  => $_GET['page']=2
+            // category/3 => $_GET['category']=3 (we convert it to cat below)
+            $_GET[$parts[$i]] = $parts[$i + 1];
+        }
+    }
+
+    // map "category" token to your existing "cat" parameter
+    if (isset($_GET['category']) && !isset($_GET['cat'])) {
+        $_GET['cat'] = $_GET['category'];
+    }
+}
+
+
+
+
+
+
+
 /*
 IMPORTANT : ce fichier ne sert que de routeur entre les différentes pages du site
 */
