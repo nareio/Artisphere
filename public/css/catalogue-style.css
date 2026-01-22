@@ -5,13 +5,7 @@
     margin: 0 auto;
 }
 
-/* logo image size */
-.logo img {
-    height: 60px;
-}
-
-
-/*MAIN AREA: sidebar + products*/
+/* MAIN AREA: sidebar + products */
 .main-content {
     display: flex;
     padding: 30px 0 100px;
@@ -24,6 +18,11 @@
     border-right: 1px solid #e4c8a1;
 }
 
+/* Sidebar toggle button to not appeare in big screen */
+.sidebar-toggle {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
 .search-form input {
     width: 100%;
     padding: 6px 10px;
@@ -70,34 +69,78 @@
     color: #e9e1d5;
 }
 
-/* Grid for product images */
+/* Grid for product cards */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
     gap: 20px 30px;
 }
 
+/* Product card: white frame with image on the left, text on the right */
 .product-card {
-    text-align: center;
+    background-color: #f3eadc;        /* light/white-like frame */
+    border-radius: 18px;
+    padding: 15px 15px 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* Wrapper to control image area and top spacing */
+.product-image-wrapper {
+    flex: 0 0 55%;        /* image takes about half the card width */
+}
+
+/* Product image: a bit taller and nicely cropped */
 .product-card img {
     width: 100%;
-    height: 130px;
+    height: 150px;        /* slightly taller than before so it is clearer */
     object-fit: cover;
+    border-radius: 12px;
 }
 
-.price-tag {
-    display: inline-block;
-    margin-top: 5px;
+/* Right side: name, price, button */
+.product-info {
+    flex: 1;
+    text-align: left;
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #4b3a2a;
+}
+
+.product-price {
+    font-size: 13px;
+    margin-bottom: 10px;
     background-color: #e9e1d5;
-    padding: 3px 8px;
-    font-size: 11px;
-    border-radius: 3px;
-    letter-spacing: 1px;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+/* "Voir" link styled like a small button */
+.product-link {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid #4b3a2a;
+    text-decoration: none;
+    font-size: 12px;
+    color: #4b3a2a;
+    background-color: #ffffff;
+}
+
+.product-link:hover {
+    background-color: #4b3a2a;
+    color: #ffffff;
 }
 
 /* Arrow */
+<<<<<<< HEAD
 .arrow-next {
     position: absolute;
     top: 50%;
@@ -188,10 +231,39 @@
 .empty-state{
   color: #e9e1d5;
   font-weight: 700;
+=======
+.page-swiper {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.next-previous {
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid #4b3a2a;
+    text-decoration: none;
+    font-size: 13px;
+    color: #4b3a2a;
+    background-color: #ffffff;
+}
+
+.next-previous:hover {
+    background-color: #4b3a2a;
+    color: #ffffff;
+}
+
+.catalogue-page-count {
+    font-size: 14px;
+    color: #4b3a2a;
+>>>>>>> origin/touts_les_produits-ahmed
 }
 
 
 
+<<<<<<< HEAD
 /* --TABLET (≤ 992px)-- */
 @media (max-width: 992px) {
 
@@ -285,4 +357,64 @@
   .apply-btn {
     width: 100%;
   }
+=======
+
+
+/* Small screens (tablets ) */
+@media (max-width: 1350px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    }
+
+    /* Hide sidebar by default on small screens */
+    .sidebar {
+        position: absolute;
+        top: 134px;
+        left: 0;
+        height: 100vh;
+        background-color: #c9a47c;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    /* Sidebar visible when opened */
+    .sidebar.open {
+        transform: translateX(0);
+        width: 40%;
+        border-right: none;
+        border-bottom: 1px solid #e4c8a1;
+        margin-bottom: 20px;
+        background: #f6e6cf;
+    }
+
+
+    /* Sidebar toggle button (mobile only) */
+    .sidebar-toggle {
+        position: absolute;
+        top: 80px;
+        left: 60px;
+        z-index: 1100;
+        background: #f6e6cf;
+        border: 0px solid #ffffff;
+        font-size: 22px;
+        padding: 6px 10px;
+        cursor: pointer;
+    }
+}
+
+/* small screens (phones) */
+@media (max-width: 600px) {
+    .main-content {
+        flex-direction: column; /* sidebar on top */
+    }
+
+    .products {
+        padding: 0 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 per row */
+    }
+>>>>>>> origin/touts_les_produits-ahmed
 }
